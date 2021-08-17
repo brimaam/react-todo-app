@@ -1,5 +1,9 @@
 .TodoForm {
     margin-top: 75px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .button {
     margin-left: 50px;

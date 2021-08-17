@@ -18,7 +18,7 @@ import { AddTodo } from "../reducers/todosSlice";
 
     return (
         <div className="container inputs">
-            <div className="input-group TodoForm" >
+            <div className="input-group TodoForm border-info" >
                 <input 
                     className="form-control"
                     type="text" 

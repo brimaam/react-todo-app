@@ -3,12 +3,9 @@
 }
 
 .item {
-    max-width: 300px;
-    border: 2px solid lightgray;
-    border-radius: 10px;
+    max-width: 350px;
+    border: 2px solid;
+    border-radius: 5px;
     margin-top: 15px;
     margin-bottom: 15px;
-}
-.TodoItem-button {
-    margin-left: 70px;
 }

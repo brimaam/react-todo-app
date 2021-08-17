@@ -17,10 +17,11 @@ function TodoItem(props) {
     }
 
     return (
-        <div className="container item border-info my-3">
-            <div className={`TodoItem-todo ${todoStatus}`} onClick={handleClick}>
-                {todo.text}
-                <button className="TodoItem-button  btn btn-danger btn-sm" onClick={handleDelete}>X</button>
+        <div className="container item border-info  my-3 position-relative">
+            <div className={` mx-auto TodoItem-todo ${todoStatus}`} onClick={handleClick}>
+                <h5 className="d-inline">{todo.text}</h5>
+                <button className="d-inline  TodoItem-button  btn btn-danger btn-sm position-absolute top-50 start-100 translate-middle"
+                    onClick={handleDelete}>X</button>
             </div>
         </div>
     )

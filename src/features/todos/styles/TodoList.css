@@ -1,6 +1,5 @@
 .card {
-    transform: translate(0%, 50%) !important;
-    max-width: 50%;
+    width: 750px;
     border: 2px solid ;
     border-radius: 10px;
     margin-top: 15px;
