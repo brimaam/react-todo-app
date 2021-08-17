@@ -2,5 +2,9 @@
     margin-top: 75px;
 }
 .button {
-    color: blue;
+    margin-left: 50px;
+}
+.inputs {
+    max-width: 300px;
+    margin-bottom: 30px;
 }

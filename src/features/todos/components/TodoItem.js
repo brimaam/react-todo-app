@@ -17,9 +17,11 @@ function TodoItem(props) {
     }
 
     return (
-        <div className={`TodoItem-todo ${todoStatus}`} onClick={handleClick}>
-            {todo.text}
-            <button className="" onClick={handleDelete}>X</button>
+        <div className="container item border-info my-3">
+            <div className={`TodoItem-todo ${todoStatus}`} onClick={handleClick}>
+                {todo.text}
+                <button className="TodoItem-button  btn btn-danger btn-sm" onClick={handleDelete}>X</button>
+            </div>
         </div>
     )
 }

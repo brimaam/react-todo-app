@@ -1,3 +1,14 @@
 .TodoItem-todo.done {
     text-decoration: line-through;
 }
+
+.item {
+    max-width: 300px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.TodoItem-button {
+    margin-left: 70px;
+}

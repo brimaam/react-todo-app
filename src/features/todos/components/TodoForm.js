@@ -12,18 +12,21 @@ import { AddTodo } from "../reducers/todosSlice";
     }
 
     function handleAddTodo(event) {
-        dispatch(AddTodo(text));
+        text ? dispatch(AddTodo(text)) : alert("Please enter a todo!");
         setText("");
     }
 
     return (
-        <div className="TodoForm" >
-            <input 
-                type="text" 
-                placeholder="Input a new todo item"
-                value={text}
-                onChange={handleChange}/>
-            <button className="button" onClick={handleAddTodo}>Add</button>
+        <div className="container inputs">
+            <div className="input-group TodoForm" >
+                <input 
+                    className="form-control"
+                    type="text" 
+                    placeholder="Input a new todo item"
+                    value={text}
+                    onChange={handleChange}/>
+                <button className="button btn btn-info" onClick={handleAddTodo}>Add</button>
+            </div>
         </div>
     )
 }

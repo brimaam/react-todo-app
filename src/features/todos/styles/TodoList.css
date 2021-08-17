@@ -1,0 +1,13 @@
+.card {
+    transform: translate(0%, 50%) !important;
+    max-width: 50%;
+    border: 2px solid ;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
