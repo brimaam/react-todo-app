@@ -24,11 +24,15 @@ const todosSlice = createSlice({
                 done: false
             });
             return state;
+        },
+        ToggleTodo(state, action) {
+            const todo = state.entities[action.payload];
+            todo.done = !todo.done;
         }
     },
 })
 
-export const { AddTodo } = todosSlice.actions;
+export const { AddTodo, ToggleTodo } = todosSlice.actions;
 
 export default todosSlice.reducer;
 
