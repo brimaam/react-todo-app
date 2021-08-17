@@ -27,12 +27,17 @@ const todosSlice = createSlice({
         },
         ToggleTodo(state, action) {
             const todo = state.entities[action.payload];
-            todo.done = !todo.done;
+            if (typeof todo != "undefined") {
+                todo.done = !todo.done;
+            }
+        },
+        DeleteTodo(state, action){
+            todosAdapter.removeOne(state, action.payload);
         }
     },
 })
 
-export const { AddTodo, ToggleTodo } = todosSlice.actions;
+export const { AddTodo, ToggleTodo, DeleteTodo } = todosSlice.actions;
 
 export default todosSlice.reducer;
 
