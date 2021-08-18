@@ -5,6 +5,7 @@ import React from 'react';
 import NotFoundPage from './features/notfound/NotFoundPage';
 import DoneList from './features/todos/components/DoneList';
 import Navbar from './features/todos/components/Navbar';
+import { Footer } from 'antd/lib/layout/layout';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/done" component={DoneList}/>
           <Route path="*" component={NotFoundPage}/>
         </Switch>
+        <Footer className="footer" style={{ textAlign: 'center' }}>To-do List ©2021 Created by Ameer Brima</Footer>
       </BrowserRouter>
     </React.Fragment>
   );
