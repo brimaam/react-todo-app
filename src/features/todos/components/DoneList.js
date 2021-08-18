@@ -5,15 +5,25 @@ import { useSelector } from 'react-redux';
 
 function DoneList() {
     const doneTodos = useSelector(selectDoneTodos);
+    var done;
+
+    if(doneTodos.length === 0){
+        done = <h5>Nothing Done Yet!</h5>
+    } else {
+        done = doneTodos.map((doneTodo) => (
+            <TodoItem key={doneTodo.id} todoId={doneTodo.id} />
+        ))
+    }
+
     return (
         <div className="container">
             <div className="card center-align hoverable">
                 <h2>Done To-do List</h2>
-                {
-                    doneTodos.map((doneTodo) => (
-                        <TodoItem key={doneTodo.id} todoId={doneTodo.id} />
-                    ))
-                }
+                <ul class="collection blue lighten-3 list">
+                    {
+                        done
+                    }
+                </ul>
             </div>
         </div>
     )
