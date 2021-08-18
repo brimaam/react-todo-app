@@ -13,11 +13,9 @@ import { createTodos } from '../../apis/todo';
     }
 
     function handleAddTodo() {
-       // text ? dispatch(AddTodo(text)) : alert("Please enter a todo!");
        text ? 
        createTodos(text).then((response) => {
-           console.log("response: ", response);
-           dispatch(AddTodo(text));
+           dispatch(AddTodo(response.data));
        }) : alert("Please enter a todo!");
         
        setText("");

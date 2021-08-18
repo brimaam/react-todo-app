@@ -7,3 +7,7 @@ export const getTodos = () => {
 export const createTodos = (text) => {
     return api.post("/todos", {text});
 }
+
+export const updateTodos = (id, updateTodo) => {
+    return api.put(`/todos/${id}`, updateTodo);
+}
