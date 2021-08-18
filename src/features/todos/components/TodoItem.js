@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectTodoById, ToggleTodo, DeleteTodo } from "../reducers/todosSlice";
 import "../styles/TodoItem.css";
 import { Button } from 'antd';
-import { updateTodos } from '../../apis/todo';
+import { deleteTodo, updateTodo } from '../../apis/todo';
 
 function TodoItem(props) {
     const id = props.todoId;
@@ -12,14 +12,18 @@ function TodoItem(props) {
     const todoStatus = todo.done ? "done" : "";
 
     function handleToggle() {
-       updateTodos(id, {done: !todo.done}).then((response) => {
-           dispatch(ToggleTodo({id, updateTodo: response.data}));
+       updateTodo(id, {done: !todo.done}).then((response) => {
+            dispatch(
+               ToggleTodo({id, updateTodo: response.data})
+            );
        })
     }
 
     function handleDelete(event) {
         event.stopPropagation();
-        dispatch(DeleteTodo(id));
+        deleteTodo(id).then(() => {
+            dispatch(DeleteTodo(id));
+        });
     }
 
     return (
