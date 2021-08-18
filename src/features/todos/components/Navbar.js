@@ -6,11 +6,11 @@ import "../styles/Navbar.css";
 function Navbar() {
     return (
         <nav className="nav-wrapper blue lighten-2">
-            <div className="container black-text">
+            <div className="container ">
                 <a href='/' className="brand-logo center"><img src={logo} alt="To do List" className="logo hoverable"/> </a>
                 <ul className="right">
-                    <li><Link to="/"><p>TO-DO LIST</p></Link></li>
-                    <li><Link to="/done"><p>FINISHED TO-DO</p></Link></li>
+                    <li><Link to="/"><b className="black-text">TO-DO LIST</b></Link></li>
+                    <li><Link to="/done"><b className="black-text">FINISHED TO-DO</b></Link></li>
                 </ul>
             </div>
         </nav>

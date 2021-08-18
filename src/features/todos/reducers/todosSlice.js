@@ -6,7 +6,7 @@ const initialState = todosAdapter.getInitialState({
     entities: {
         1:{
             id: "1",
-            text: "Buy milk",
+            text: "buy milk",
             done: false,
         }
     }

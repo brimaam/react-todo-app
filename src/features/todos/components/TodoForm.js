@@ -23,28 +23,20 @@ import { Input, Space, Button } from 'antd';
     }
 
     return (
-        <div className="container inputs">
-            {/* <div className="input-group TodoForm border-info" >
-                <input 
-                    className="form-control"
-                    type="text" 
-                    placeholder="Input a new todo item"
-                    value={text}
-                    onChange={handleChange}/>
-                <button className="button btn btn-info" onClick={handleAddTodo}>Add</button>
-            </div> */}
-            <Space direction="vertical">
+        <div className="container ">
+            <Space direction="horizontal">
                 <Input
-                    className="TodoForm "
+                    className="TodoForm inputs"
                     placeholder="Input a new todo item"
                     type="text" 
-                    allowClear
-                    enterButton="Add"
                     size="large"
                     value={text}
                     onChange={handleChange}
                 />
-                <Button className="button btn btn-info" onClick={handleAddTodo} >Add</Button>
+                <Button 
+                    type="primary" 
+                    className="buttons black-text btn-large waves-effect waves-light blue lighten-3" 
+                    onClick={handleAddTodo}><b>Add</b></Button>
             </Space>
         </div>
     )

@@ -18,7 +18,7 @@ function TodoList() {
     return (
         <div className="container">
             <div className="card center-align hoverable">
-                <h2>To-do List</h2>
+                <h2 className="title">To-do List</h2>
                 <TodoForm />
                 <TodoGroup />
             </div>
