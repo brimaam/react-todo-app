@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import "../styles/TodoForm.css";
 import { AddTodo } from "../reducers/todosSlice";
+import { createTodos } from '../../apis/todo';
 
  function TodoForm() {
     const [text, setText] = useState("");
@@ -11,9 +12,15 @@ import { AddTodo } from "../reducers/todosSlice";
         setText(event.target.value);
     }
 
-    function handleAddTodo(event) {
-        text ? dispatch(AddTodo(text)) : alert("Please enter a todo!");
-        setText("");
+    function handleAddTodo() {
+       // text ? dispatch(AddTodo(text)) : alert("Please enter a todo!");
+       text ? 
+       createTodos(text).then((response) => {
+           console.log("response: ", response);
+           dispatch(AddTodo(text));
+       }) : alert("Please enter a todo!");
+        
+       setText("");
     }
 
     return (

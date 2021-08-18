@@ -1,5 +1,5 @@
-import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
-import { v4 as uuid } from "uuid";
+import { createSlice, createEntityAdapter, createSelector } from "@reduxjs/toolkit";
+// import { v4 as uuid } from "uuid";
 
 const todosAdapter = createEntityAdapter();
 const initialState = todosAdapter.getInitialState({
@@ -18,28 +18,36 @@ const todosSlice = createSlice({
     initialState: initialState,
     reducers: {
         AddTodo(state, action) {
-            todosAdapter.addOne(state, {
-                id: uuid(),
-                text: action.payload,
-                done: false
-            });
-            return state;
+            // todosAdapter.addOne(state, {
+            //     id: uuid(),
+            //     text: action.payload,
+            //     done: false
+            // });
+            // return state;
+            todosAdapter.addOne(state, action.payload);
         },
         ToggleTodo(state, action) {
             const todo = state.entities[action.payload];
-            if (typeof todo != "undefined") {
-                todo.done = !todo.done;
-            }
+            todo.done = !todo.done;
         },
         DeleteTodo(state, action){
-            todosAdapter.removeOne(state, action.payload);
+            todosAdapter.removeOne(state, action.payload); 
+        },
+        AddTodos(state, action){
+            todosAdapter.addMany(state, action.payload);
         }
     },
 })
 
-export const { AddTodo, ToggleTodo, DeleteTodo } = todosSlice.actions;
+export const { AddTodo, ToggleTodo, DeleteTodo, AddTodos } = todosSlice.actions;
 
 export default todosSlice.reducer;
 
-export const { selectIds: selectTodoIds, selectById: selectTodoById } = 
-todosAdapter.getSelectors((state) => state.todoList);
+export const { 
+    selectAll : selectAllTodos,
+    selectIds: selectTodoIds,
+    selectById: selectTodoById 
+} = todosAdapter.getSelectors((state) => state.todoList);
+
+export const selectDoneTodos = createSelector([selectAllTodos], (todos) => todos.filter((todo) => todo.done));
+
