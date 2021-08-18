@@ -16,11 +16,11 @@ function TodoList() {
         })
     })
     return (
-        <div className="container ">
-            <div className="card mx-auto ">
-                <h1 className="text-center mx-auto">To-do List</h1>
-                <TodoGroup />
+        <div className="container">
+            <div className="card center-align hoverable">
+                <h2>To-do List</h2>
                 <TodoForm />
+                <TodoGroup />
             </div>
         </div>
     );

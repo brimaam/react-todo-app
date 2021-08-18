@@ -2,11 +2,12 @@
     width: 750px;
     border: 2px solid ;
     border-radius: 10px;
+    margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-h1 {
+h2 {
     margin-top: 20px;
     margin-bottom: 20px;
 }

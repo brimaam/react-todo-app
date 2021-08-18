@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import "../styles/TodoForm.css";
 import { AddTodo } from "../reducers/todosSlice";
 import { createTodos } from '../../apis/todo';
+import { Input, Space, Button } from 'antd';
 
  function TodoForm() {
     const [text, setText] = useState("");
@@ -23,7 +24,7 @@ import { createTodos } from '../../apis/todo';
 
     return (
         <div className="container inputs">
-            <div className="input-group TodoForm border-info" >
+            {/* <div className="input-group TodoForm border-info" >
                 <input 
                     className="form-control"
                     type="text" 
@@ -31,7 +32,20 @@ import { createTodos } from '../../apis/todo';
                     value={text}
                     onChange={handleChange}/>
                 <button className="button btn btn-info" onClick={handleAddTodo}>Add</button>
-            </div>
+            </div> */}
+            <Space direction="vertical">
+                <Input
+                    className="TodoForm "
+                    placeholder="Input a new todo item"
+                    type="text" 
+                    allowClear
+                    enterButton="Add"
+                    size="large"
+                    value={text}
+                    onChange={handleChange}
+                />
+                <Button className="button btn btn-info" onClick={handleAddTodo} >Add</Button>
+            </Space>
         </div>
     )
 }

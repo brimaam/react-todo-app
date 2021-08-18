@@ -27,15 +27,18 @@ function TodoItem(props) {
     }
 
     return (
-        <div className="container item border-info  my-3 position-relative">
-            <div className={` mx-auto TodoItem-todo ${todoStatus}`} onClick={handleToggle}>
-                <h5 className="d-inline">{todo.text}</h5>
-                {/* <button className="d-inline  TodoItem-button  btn btn-danger btn-sm position-absolute top-50 start-100 translate-middle"
-                    onClick={handleDelete}>X</button> */}
-                <Button type="primary" className="d-inline position-absolute top-50 start-100 translate-middle" danger onClick={handleDelete}>X</Button>
+        <li className="collection-item item ">
+            <div className={`TodoItem-todo ${todoStatus}`} onClick={handleToggle}>
+                <h5>{todo.text}
+                <Button type="primary" className="secondary-content" danger onClick={handleDelete}>X</Button>
+                </h5>
             </div>
-        </div>
+        </li>
     )
 }
 
 export default TodoItem;
+
+
+/* <button className="d-inline  TodoItem-button  btn btn-danger btn-sm position-absolute top-50 start-100 translate-middle"
+                    onClick={handleDelete}>X</button> */

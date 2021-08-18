@@ -7,11 +7,13 @@ function TodoGroup() {
     const todoIds = useSelector(selectTodoIds);
     return (
         <div>
-            {
-                todoIds.map((id) => (
-                    <TodoItem key={id} todoId={id} />
-                ))
-            }
+            <ul class="collection">
+                {
+                    todoIds.map((id) => (
+                        <TodoItem key={id} todoId={id} />
+                    ))
+                }
+            </ul>
         </div>
     )
 }
