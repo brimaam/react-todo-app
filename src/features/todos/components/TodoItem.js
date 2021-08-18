@@ -27,7 +27,7 @@ function TodoItem(props) {
     }
 
     return (
-        <li className="collection-item item ">
+        <li className="collection-item item hoverable">
             <div className={`TodoItem-todo ${todoStatus}`} onClick={handleToggle}>
                 <h5>{todo.text}
                 <Button type="primary" className="secondary-content" danger onClick={handleDelete}>X</Button>
@@ -38,7 +38,3 @@ function TodoItem(props) {
 }
 
 export default TodoItem;
-
-
-/* <button className="d-inline  TodoItem-button  btn btn-danger btn-sm position-absolute top-50 start-100 translate-middle"
-                    onClick={handleDelete}>X</button> */

@@ -11,3 +11,12 @@ h2 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.list {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid !important;
+    border-radius: 5px !important;
+}
