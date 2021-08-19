@@ -13,7 +13,7 @@ const todosSlice = createSlice({
         AddTodo(state, action) {
             todosAdapter.addOne(state, action.payload);
         },
-        ToggleTodo(state, action) {
+        UpdateTodo(state, action) {
             todosAdapter.updateOne(state, {
                 id: action.payload.id,
                 changes: action.payload.updateTodo
@@ -28,7 +28,7 @@ const todosSlice = createSlice({
     },
 })
 
-export const { AddTodo, ToggleTodo, DeleteTodo, AddTodos } = todosSlice.actions;
+export const { AddTodo, UpdateTodo, DeleteTodo, AddTodos } = todosSlice.actions;
 
 export default todosSlice.reducer;
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { selectTodoById, ToggleTodo, DeleteTodo } from "../reducers/todosSlice";
+import { selectTodoById, UpdateTodo, DeleteTodo } from "../reducers/todosSlice";
 import "../styles/TodoItem.css";
 import { Input, Button, Modal } from 'antd';
 import { deleteTodo, updateTodo } from '../../apis/todo';
@@ -18,9 +18,21 @@ function TodoItem(props) {
     function handleToggle() {
        updateTodo(id, {done: !todo.done}).then((response) => {
             dispatch(
-               ToggleTodo({id, updateTodo: response.data})
+                UpdateTodo({id, updateTodo: response.data})
             );
        })
+    }
+
+    function handleUpdateText() {
+        if(text) {
+            updateTodo(id, {text: text}).then((response) => {
+                console.log(response.data)
+                dispatch(
+                    UpdateTodo({id, updateTodo: response.data})
+                );
+            })
+        }
+        setIsModalVisible(false);
     }
 
     function handleDelete(event) {
@@ -43,16 +55,6 @@ function TodoItem(props) {
         setText(event.target.value);
     }
 
-    function handleUpdateText() {
-        updateTodo(id, {text: text}).then((response) => {
-            console.log(response.data)
-            dispatch(
-                ToggleTodo({id, updateTodo: response.data})
-            );
-        })
-        setIsModalVisible(false);
-    }
-
     function handleModal() {
         setIsModalVisible(true);
     }
@@ -64,32 +66,36 @@ function TodoItem(props) {
 
     return (
         <li className="collection-item item hoverable">
-            <div className={`TodoItem-todo ${todoStatus}`} onClick={handleToggle}>
-                <h5>{todo.text}
-
-                <Modal 
-                    title="Basic Modal" 
-                    visible={isModalVisible}  
-                    okText="UPDATE Todo"
-                    onOk={handleUpdateText} 
-                    onCancel={handleCancel}>
-                    <Input
-                        className="TodoForm"
-                        placeholder="Input a new todo item"
-                        type="text" 
-                        size="large"
-                        value={text}
-                        onChange={handleChange}
-                    />
-                </Modal>
-
-                <Button type="primary" 
-                    className="secondary-content waves-effect waves-light" 
-                    danger onClick={handleDelete}>
-                        <DeleteOutlined />
-                </Button>
+            <div class="row">
+                <div class="col s12">
+                    <div className={`TodoItem-todo ${todoStatus}`} onClick={handleToggle}>
+                        <h5>{todo.text}
+                        <Button type="primary" 
+                            className="secondary-content waves-effect waves-light" 
+                            danger onClick={handleDelete}>
+                                <DeleteOutlined />
+                        </Button>
+                        </h5>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <Modal 
+                        title="Basic Modal" 
+                        visible={isModalVisible}  
+                        okText="UPDATE Todo"
+                        onOk={handleUpdateText} 
+                        onCancel={handleCancel}>
+                        <Input
+                            className="TodoForm"
+                            placeholder="Input a new todo item"
+                            type="text" 
+                            size="large"
+                            value={text}
+                            onChange={handleChange}
+                        />
+                    </Modal>
                     {modalButton}
-                </h5>
+                </div>
             </div>
         </li>
     )
