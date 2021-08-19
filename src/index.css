@@ -10,6 +10,7 @@ body {
   background-color: lightblue;
   
   font-family: Arial, Helvetica, sans-serif;
+
 }
 
 code {
@@ -18,5 +19,5 @@ code {
 }
 
 .page {
-  min-height: calc(100vh - 40px);
+  min-height: calc(75vh - 10px);
 }

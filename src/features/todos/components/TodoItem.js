@@ -45,7 +45,7 @@ function TodoItem(props) {
     var modalButton;
     if(todoStatus === ""){
         modalButton = <Button type="primary" 
-                            className="secondary-content" 
+                            className="modalButton" 
                             onClick={handleModal}>
                                 <EditOutlined />
                         </Button>
@@ -65,28 +65,28 @@ function TodoItem(props) {
     }
 
     return (
-        <li className="collection-item item hoverable">
-            <div class="row">
-                <div class="col s12">
+        <li className="collection-item item hoverable animate__animated animate__fadeInUp">
+            <div className="row">
+                <div className="col s12 m4 l10">
                     <div className={`TodoItem-todo ${todoStatus}`} onClick={handleToggle}>
-                        <h5>{todo.text}
-                        <Button type="primary" 
-                            className="secondary-content waves-effect waves-light" 
-                            danger onClick={handleDelete}>
-                                <DeleteOutlined />
-                        </Button>
-                        </h5>
+                        <h5>{todo.text}</h5>
                     </div>
                 </div>
-                <div class="col s12">
+                <div className="col s12 m4 l2">
+                    <Button type="primary" 
+                            className="waves-effect waves-light" 
+                            danger onClick={handleDelete}>
+                             <DeleteOutlined />
+                    </Button>
+                    {modalButton}
                     <Modal 
-                        title="Basic Modal" 
+                        title="Update Todo" 
                         visible={isModalVisible}  
-                        okText="UPDATE Todo"
+                        okText="UPDATE"
                         onOk={handleUpdateText} 
                         onCancel={handleCancel}>
                         <Input
-                            className="TodoForm"
+                            className="TodoForm inputModal"
                             placeholder="Input a new todo item"
                             type="text" 
                             size="large"
@@ -94,7 +94,7 @@ function TodoItem(props) {
                             onChange={handleChange}
                         />
                     </Modal>
-                    {modalButton}
+                    
                 </div>
             </div>
         </li>

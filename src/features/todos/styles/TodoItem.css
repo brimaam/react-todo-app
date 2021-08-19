@@ -10,3 +10,18 @@
     margin-top: 15px !important;
     margin-bottom: 15px !important;
 }
+
+.row {
+    margin-bottom: 0;
+}
+
+.modalButton {
+    margin-top: 10px;
+}
+
+.inputModal {
+    width: 80% !important;
+    margin-left: 42px !important;
+    padding-left: 10px !important;
+}
+

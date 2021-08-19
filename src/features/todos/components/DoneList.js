@@ -9,7 +9,7 @@ function DoneList() {
     var done;
 
     if(doneTodos.length === 0){
-        done = <h5 className="title animate__animated animate__rotateIn" >Nothing Done Yet!</h5>
+        done = <h5 className="title animate__animated animate__jello" >Nothing Done Yet!</h5>
     } else {
         done = doneTodos.map((doneTodo) => (
             <TodoItem key={doneTodo.id} todoId={doneTodo.id} />
@@ -19,7 +19,7 @@ function DoneList() {
     return (
         <div className="container">
             <div className="card center-align hoverable">
-                <h2 className="title" >Done To-do List</h2>
+                <h2 className="title animate__animated animate__heartBeat" >Done To-do List</h2>
                 <ul className="collection blue lighten-3 list">
                     {done}
                 </ul>
