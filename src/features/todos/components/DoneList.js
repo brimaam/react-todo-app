@@ -9,7 +9,7 @@ function DoneList() {
     var done;
 
     if(doneTodos.length === 0){
-        done = <h5 className="title" >Nothing Done Yet!</h5>
+        done = <h5 className="title animate__animated animate__rotateIn" >Nothing Done Yet!</h5>
     } else {
         done = doneTodos.map((doneTodo) => (
             <TodoItem key={doneTodo.id} todoId={doneTodo.id} />
