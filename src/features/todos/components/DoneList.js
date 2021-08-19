@@ -21,9 +21,7 @@ function DoneList() {
             <div className="card center-align hoverable">
                 <h2 className="title" >Done To-do List</h2>
                 <ul className="collection blue lighten-3 list">
-                    {
-                        done
-                    }
+                    {done}
                 </ul>
             </div>
         </div>

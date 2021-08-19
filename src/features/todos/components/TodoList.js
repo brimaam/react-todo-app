@@ -1,20 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import TodoForm from './TodoForm'
 import TodoGroup from './TodoGroup'
 import "../styles/TodoList.css";
-import { getTodos } from '../../apis/todo';
-import { useDispatch } from 'react-redux';
-import { AddTodos } from '../reducers/todosSlice';
 
 
 function TodoList() {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        getTodos().then((response) =>{
-            dispatch(AddTodos(response.data));
-        })
-    })
+   
     return (
         <div className="container">
             <div className="card center-align hoverable">

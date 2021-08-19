@@ -19,10 +19,10 @@ const todosSlice = createSlice({
                 changes: action.payload.updateTodo
             })
         },
-        DeleteTodo(state, action){
+        DeleteTodo(state, action) {
             todosAdapter.removeOne(state, action.payload); 
         },
-        AddTodos(state, action){
+        AddTodos(state, action) {
             todosAdapter.addMany(state, action.payload);
         }
     },
