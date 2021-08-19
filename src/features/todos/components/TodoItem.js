@@ -36,10 +36,12 @@ function TodoItem(props) {
     }
 
     function handleDelete(event) {
-        event.stopPropagation();
-        deleteTodo(id).then(() => {
-            dispatch(DeleteTodo(id));
-        });
+        if (window.confirm("Are you sure you want to delete?")){
+            event.stopPropagation();
+            deleteTodo(id).then(() => {
+                dispatch(DeleteTodo(id));
+            });
+        }
     }
 
     var modalButton;
