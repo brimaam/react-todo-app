@@ -11,13 +11,15 @@ function App() {
   return (
     <React.Fragment>
       <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={TodoList}/>
-          <Route exact path="/done" component={DoneList}/>
-          <Route path="*" component={NotFoundPage}/>
-        </Switch>
-        <Footer className="footer" style={{ textAlign: 'center' }}>To-do List ©2021 Created by Ameer Brima</Footer>
+        <div className="page">
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={TodoList}/>
+            <Route exact path="/done" component={DoneList}/>
+            <Route path="*" component={NotFoundPage}/>
+          </Switch>
+        </div>
+        <Footer style={{ textAlign: 'center' }}>To-do List ©2021 Created by Ameer Brima</Footer>
       </BrowserRouter>
     </React.Fragment>
   );

@@ -2,14 +2,8 @@ import { createSlice, createEntityAdapter, createSelector } from "@reduxjs/toolk
 
 const todosAdapter = createEntityAdapter();
 const initialState = todosAdapter.getInitialState({
-    ids: ["1"],
-    entities: {
-        1:{
-            id: "1",
-            text: "buy milk",
-            done: false,
-        }
-    }
+    ids: [],
+    entities: {}
 });
 
 const todosSlice = createSlice({

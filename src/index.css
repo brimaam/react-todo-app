@@ -10,10 +10,6 @@ body {
   background-color: lightblue;
   
   font-family: Arial, Helvetica, sans-serif;
-
-  margin:0;
-  padding:0;
-  height:100%;
 }
 
 code {
@@ -21,8 +17,6 @@ code {
     monospace;
 }
 
-.footer {
-  position:absolute;
-  bottom:0;
-  width:100%;
+.page {
+  min-height: calc(100vh - 40px);
 }
